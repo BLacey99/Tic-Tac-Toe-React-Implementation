@@ -26,12 +26,16 @@
 
 .clicked{
     background-color:green;
-    font-size:2em;
+  
     outline:3px solid black;
     display:flex;
     justify-content: center;
     align-items: center;
     color:black;
+}
+
+.clicked p{
+    font-size:4em!important;
 }
 
 .clicked:hover{

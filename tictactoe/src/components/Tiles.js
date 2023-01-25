@@ -9,6 +9,7 @@ export default function Tiles(props){
     const[turn, setTurn] = useState('x');
 
     const tileArr = [];
+    const filledArr = [];
 
     (async function generateArr(){
         for(let i = 1; i < 10; i++){
@@ -16,12 +17,15 @@ export default function Tiles(props){
             
     }
     })();
+          
+    const Changer = () =>{
 
-
+    }
 
     
+    
       
-        const mapper = tileArr.map((entry) => <Tile setTurn = {setTurn} turn = {turn} entry={entry}>{entry}</Tile>)
+        const mapper = tileArr.map((entry) =>  <Tile key={entry}  filledArr = {filledArr}  setTurn = {setTurn} turn = {turn} entry={entry}></Tile>)
 
     return(
         <div>
@@ -29,9 +33,10 @@ export default function Tiles(props){
             <br></br>
       
         <div className='playingBoard' turn = {turn}>
-         
+
            {mapper}
         </div>
+        <button onClick={Changer}>Logger</button>
         </div>
     )
 }
